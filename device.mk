@@ -244,7 +244,14 @@ PRODUCT_COPY_FILES += \
     device/asus/fugu/init.fugu.diag.rc.userdebug:root/init.fugu.diag.rc
 endif
 
-$(call inherit-product-if-exists, vendor/asus/fugu/device-vendor.mk)
+#$(call inherit-product-if-exists, vendor/asus/fugu/device-vendor.mk)
+LOCAL_STEM := fugu/device-partial.mk
+$(call inherit-product-if-exists, vendor/asus/$(LOCAL_STEM))
+$(call inherit-product-if-exists, vendor/broadcom/$(LOCAL_STEM))
+$(call inherit-product-if-exists, vendor/google/$(LOCAL_STEM))
+$(call inherit-product-if-exists, vendor/intel/$(LOCAL_STEM))
+$(call inherit-product-if-exists, vendor/widevine/$(LOCAL_STEM))
+
 $(call inherit-product-if-exists, vendor/intel/PRIVATE/fugu/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/intel/moorefield/prebuilts/houdini/houdini.mk)
 
@@ -256,3 +263,9 @@ PRODUCT_COPY_FILES += \
     device/asus/fugu/sep_policy.conf:system/etc/security/sep_policy.conf
 
 #PRODUCT_CHARACTERISTICS := tablet
+
+# for Gecko
+
+PRODUCT_COPY_FILES += \
+    device/asus/fugu/volume.cfg:system/etc/volume.cfg
+

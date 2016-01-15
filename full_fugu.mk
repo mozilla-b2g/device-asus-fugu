@@ -21,3 +21,16 @@ PRODUCT_DEVICE := fugu
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := fugu
 PRODUCT_MANUFACTURER := ASUS
+
+# for Gecko
+
+TARGET_DEVICE_BLOBS := vendor/intel/fugu/device-partial.mk \
+                       vendor/broadcom/fugu/device-partial.mk \
+                       vendor/google/fugu/device-partial.mk \
+                       vendor/widevine/fugu/device-partial.mk \
+                       vendor/asus/fugu/device-partial.mk
+
+# Add GAIA flag to support TV distribution
+GAIA_DEVICE_TYPE := tv
+
+
