@@ -31,6 +31,7 @@ TARGET_BOARD_PLATFORM := moorefield
 TARGET_BOOTLOADER_BOARD_NAME := fugu
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 6393129984
 BOARD_FLASH_BLOCK_SIZE := 2048
 
 TARGET_DROIDBOOT_LIBS := libintel_droidboot
@@ -153,8 +154,8 @@ INTEL_DPST := true
 # bootstub as 2nd bootloader
 TARGET_BOOTLOADER_IS_2ND := true
 
-BOARD_SEPOLICY_DIRS := device/asus/fugu/sepolicy
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_DIRS += device/asus/fugu/sepolicy
+BOARD_SEPOLICY_UNION += \
     bluetooth.te \
     btfwloader.te \
     dhcp.te \
