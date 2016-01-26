@@ -175,6 +175,9 @@ BOARD_SEPOLICY_UNION += \
     property_contexts \
     service_contexts
 
+TARGET_PROVIDES_B2G_INIT_RC := true
+TARGET_PROVIDES_INIT_RC := false
+
 # Use the non-open-source parts, if they're present
 -include vendor/asus/fugu/BoardConfigVendor.mk
 
