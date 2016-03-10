@@ -46,6 +46,7 @@ BOARD_KERNEL_CMDLINE += earlyprintk=nologger loglevel=8
 BOARD_KERNEL_CMDLINE += androidboot.hardware=fugu androidboot.serialno=01234567890123456789
 BOARD_KERNEL_CMDLINE += snd_pcm.maximum_substreams=8
 BOARD_KERNEL_CMDLINE += intel_soc_pmu.enable_s3=0
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Custom dumpstate library to add board specific stuff to bugreport
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.fugu
@@ -80,6 +81,9 @@ WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/fugu/bluetooth
+PRODUCT_PACKAGES += \
+     bluetooth.default \
+     libbt-vendor
 
 # IMG graphics
 BOARD_GFX_REV := RGX6400
