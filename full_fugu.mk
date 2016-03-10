@@ -30,6 +30,9 @@ TARGET_DEVICE_BLOBS := vendor/intel/fugu/device-partial.mk \
                        vendor/widevine/fugu/device-partial.mk \
                        vendor/asus/fugu/device-partial.mk
 
+# Set Gecko toolchain
+GECKO_TOOLS_PREFIX = prebuilts/gcc/$(HOST_PREBUILT_TAG)/x86/x86_64-linux-android-4.9/bin/x86_64-linux-android-
+
 # Add GAIA flag to support TV distribution
 GAIA_DEVICE_TYPE := tv
 
